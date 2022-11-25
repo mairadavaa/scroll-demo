@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+$Roboto: "Roboto", sans-serif;
+
+// colors
+$dark: rgb(29, 29, 29);
+$light: #ffffff;
+$primary: #f2f2f2;
+$bg: #ffffff;
+$formContainerBackground: rgba(0, 0, 0, 0.5);
+$formGrayBackground: #f2f2f2;
+$formInputBackground: #ffffff;
+$formBtnBackground: #222222;
+$formPrimaryTextColor: #919091;
+$formSecondaryTextColor: #222222;
+
+// $spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+$borderRadius: 12px;
+$headerIphoneHeight: 64px;
+$headerHeight: 100px;
+$maxWidth: 1920px;
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (min-width: 500px) {
+      @content;
+    }
+  }
+  @if $point == sm {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+}

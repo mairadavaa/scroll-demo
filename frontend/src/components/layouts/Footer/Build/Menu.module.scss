@@ -1,0 +1,67 @@
+@import "../footer-variables.module.scss";
+
+.menu_section {
+    gap: 15px;
+    @include flex();
+
+    h3 {
+        order: 0;
+        flex-grow: 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.08em;
+
+        flex: none;
+        font-style: normal;
+        font-family: 'Roboto';
+        text-transform: uppercase;
+        /* identical to box height */
+
+        @media (max-width: 830px) {
+            font-weight: 700;
+        }
+    }
+
+    a, button, p {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 500;
+
+        color: #919091;
+        font-style: normal;
+        font-family: 'Roboto';
+    }
+
+    &__navbar_btns {
+        @include flex();
+
+        &__language_btns {
+            display: flex;
+        }
+        @media (max-width: 830px) {
+            // @include flex();
+            display: none;
+        }
+    }
+
+    &__text {
+        display: none;
+        @media (max-width: 830px) {
+            display: block;
+        }
+    }
+
+    &__social_logos {
+        display: flex;
+        gap: 38px;
+        justify-content: center;
+        @media (max-width: 830px) {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.forever_active {
+    @include flex();
+}

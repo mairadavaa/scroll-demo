@@ -1,0 +1,41 @@
+*, *::before, *::after {
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+$pagePadding: 14vh 90px;
+$pageSmallPadding: 14vh 30px;
+$paddingPhonePadding: 14vh 30px;
+
+// font section (((((()))))))
+$fontFamily: "Noticia Text", serif;
+
+// elements ---------------------
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  transition: 0.2s ease all;
+}
+
+// breakpoints ************
+@mixin breakpoint($size) {
+  @if $size == md {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $size == sm {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+}

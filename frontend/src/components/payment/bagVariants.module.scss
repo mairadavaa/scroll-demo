@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,700;1,400&display=swap');
+
+*, *::before, *::after {
+    margin: 0%;
+    padding: 0%;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+// colors 
+$main: #FFF;
+$text: #000;
+
+
+// padding section ^^^^^^^
+$padding: 0 90px;
+$smallPadding: 0 30px;
+$phonePadding: 0 10px;
+
+
+// phone padding ^^^^^^^
+$pagePadding: 10vh 90px;
+$pageSmallPadding: 10vh 30px;
+$paddingPhonePadding: 10vh 30px;
+
+
+$fontFamily: 'Noticia Text', serif;
+
+// elements ?????????
+button {
+    border: none;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+
+// breakpoints ((((((()))))))
+@mixin breakpoint($size) {
+    @if $size == md {
+        @media (max-width: 900px) {
+            @content
+        }
+    };
+
+    @if $size == sm {
+        @media (max-width: 600px) {
+            @content
+        }
+    };
+}
+
+// some functions &&&&&&&&
+@mixin pageSection {
+    width: 100vw;
+    height: auto;
+    padding: $pagePadding;
+
+    @include breakpoint(md) {
+        padding: $pageSmallPadding;
+    }
+    @include breakpoint(sm) {
+        padding: $paddingPhonePadding;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+}

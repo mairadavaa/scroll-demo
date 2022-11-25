@@ -1,0 +1,268 @@
+@import "./bagVariants.module.scss";
+
+.bagSection {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  position: relative;
+
+  @include breakpoint(md) {
+    display: block;
+    height: auto;
+  }
+
+  &__contactInformation {
+    position: static;
+    transition: 1s ease all;
+    z-index: 80;
+
+    width: 50%;
+    height: 100%;
+    padding: $pagePadding;
+    background: #ededed;
+
+    @include breakpoint(md) {
+      width: 100%;
+      height: 100vh;
+      position: inherit;
+      padding: $pageSmallPadding;
+    }
+
+    @include breakpoint(sm) {
+      padding: $paddingPhonePadding;
+    }
+
+    &__container {
+      gap: 2rem;
+      width: 100%;
+      height: 100%;
+      padding: 3rem 0;
+
+      @include flex();
+
+      @include breakpoint(md) {
+        padding: 2rem 0;
+      }
+
+      @include breakpoint(sm) {
+        padding: 1rem 0;
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 2.4rem;
+
+        @include breakpoint(md) {
+          font-size: 2.1rem;
+          text-align: center;
+        }
+      }
+
+      .emailSection {
+        gap: 10px;
+        @include flex();
+
+        &__emailInput {
+          width: 100%;
+          font-size: 1rem;
+          padding: 0.7rem 0.4rem;
+          background: $main;
+
+          border: none;
+        }
+
+        &__checkBox {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p {
+            font-size: 0.8rem;
+            color: grey;
+          }
+        }
+      }
+
+      .importantInformation {
+        gap: 0.8rem;
+        width: 100%;
+        height: auto;
+        @include flex();
+
+        &__register {
+          gap: 1rem;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          input {
+            width: 48%;
+            border: none;
+            background: $main;
+            padding: 0.7rem 0.4rem;
+
+            @include breakpoint(sm) {
+              width: 47%;
+            }
+          }
+          .addressInput {
+            width: 100%;
+          }
+        }
+        p {
+          font-size: 0.8rem;
+          color: grey;
+        }
+        .blackColorFont {
+          color: #000;
+        }
+
+        &__ship__checkBox {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p {
+            display: flex;
+            color: grey;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__SummarySection {
+    position: static;
+    transition: 1s ease all;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+
+    // right: 0%;
+    width: 50%;
+    // bottom: 0%;
+    height: 100%;
+    padding: $pagePadding;
+    overflow: scroll;
+    background: $main;
+    padding-bottom: 10vh;
+
+    @include breakpoint(md) {
+      width: 100%;
+      height: 100vh;
+      position: inherit;
+      padding: $pageSmallPadding;
+    }
+
+    @include breakpoint(sm) {
+      padding: $paddingPhonePadding;
+    }
+
+    &__container {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+
+      gap: 1rem;
+      width: 100%;
+      height: 100%;
+      padding: 3rem 0;
+
+      @include flex();
+
+      @include breakpoint(md) {
+        padding: 2rem 0;
+      }
+
+      @include breakpoint(sm) {
+        padding: 1rem 0;
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 2.4rem;
+
+        @include breakpoint(md) {
+          font-size: 2.1rem;
+          text-align: center;
+        }
+      }
+
+      .ordersSection {
+        &__products-section {
+          width: 100%;
+          height: 100vh;
+          height: auto;
+          overflow: scroll;
+          border-top: 1px solid silver;
+          border-bottom: 1px solid silver;
+        }
+      }
+
+      &__shipping {
+        width: 100%;
+        padding: 0.3rem 0;
+        border-bottom: 1px solid silver;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      &__continueToPaymentSection {
+        gap: 1rem;
+        width: 100%;
+        @include flex();
+        align-items: center;
+        button {
+          width: 50%;
+          padding: 0.5rem 0;
+
+          color: $main;
+          background: #000;
+          font-size: 1rem;
+
+          &:active {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+  &__paymentSection {
+    position: static;
+    // position: absolute;
+    transition: 1s ease all;
+    z-index: 80;
+
+    width: 50%;
+    height: 100%;
+    padding: $pagePadding;
+    background: purple;
+
+    @include breakpoint(md) {
+      width: 100%;
+      height: 100vh;
+      position: inherit;
+      padding: $pageSmallPadding;
+    }
+
+    @include breakpoint(sm) {
+      padding: $paddingPhonePadding;
+    }
+  }
+}
+
+.removeBtn {
+  display: none;
+}
+
+.right {
+  right: 0%;
+}
+
+.left {
+  left: 0%;
+}

@@ -1,0 +1,233 @@
+@import "../bagVariants.module.scss";
+
+.bagSection {
+  width: 100%;
+  height: 100vh;
+  padding-top: 10vh;
+
+  display: flex;
+  position: relative;
+
+  @include breakpoint(md) {
+    display: block;
+    height: auto;
+  }
+
+  &__contactInformation {
+    position: static;
+    transition: 1s ease all;
+    z-index: 80;
+
+    width: 50%;
+    height: 100%;
+    padding: $pagePadding;
+    background: #ededed;
+
+    @include breakpoint(md) {
+      width: 100%;
+      height: 100vh;
+      position: inherit;
+      padding: $pageSmallPadding;
+    }
+
+    @include breakpoint(sm) {
+      padding: $paddingPhonePadding;
+    }
+
+    &__container {
+      gap: 2rem;
+      width: 100%;
+      height: 100%;
+      padding: 3rem 0;
+
+      @include flex();
+
+      @include breakpoint(md) {
+        padding: 2rem 0;
+      }
+
+      @include breakpoint(sm) {
+        padding: 1rem 0;
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 2.4rem;
+
+        @include breakpoint(md) {
+          font-size: 2.1rem;
+          text-align: center;
+        }
+      }
+
+      .emailSection {
+        gap: 10px;
+        @include flex();
+
+        &__emailInput {
+          width: 100%;
+          font-size: 1rem;
+          padding: 0.7rem 0.4rem;
+          background: $main;
+
+          border: none;
+        }
+
+        &__checkBox {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p {
+            font-size: 0.8rem;
+            color: grey;
+          }
+        }
+      }
+
+      .importantInformation {
+        gap: 0.8rem;
+        width: 100%;
+        height: auto;
+        @include flex();
+
+        &__register {
+          gap: 1rem;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          input {
+            width: 48%;
+            border: none;
+            background: $main;
+            padding: 0.7rem 0.4rem;
+
+            @include breakpoint(sm) {
+              width: 47%;
+            }
+          }
+          &__chooseOrganization {
+            width: 100%;
+            padding: 8px;
+            height: 6vh;
+            display: flex;
+            background: #fff;
+            align-items: center;
+            justify-content: space-between;
+
+            .checkBox {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+
+              .button {
+                width: 23px;
+                height: 23px;
+                cursor: pointer;
+                border-radius: 4px;
+                border: 1px solid #000;
+                transition: 0.2s ease all;
+                // box-shadow: -1px -1px 1px 1px #000;
+                box-shadow: -2px -2px 1px 1px #000;
+                &:hover {
+                  box-shadow: 2px 2px 1px 1px #000;
+                }
+                &:checked {
+                  background: #000;
+                  border: 1px solid #fff;
+                }
+              }
+              .buttonActive {
+                background: #000;
+                border: 1px solid #fff;
+                box-shadow: 2px 2px 1px 2px #000;
+              }
+            }
+            p {
+              color: #000;
+            }
+          }
+          .addressInput {
+            width: 100%;
+          }
+        }
+        p {
+          font-size: 0.8rem;
+          color: grey;
+        }
+        .blackColorFont {
+          color: #000;
+        }
+
+        &__ship__checkBox {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          p {
+            display: flex;
+            color: grey;
+            font-size: 0.8rem;
+          }
+        }
+
+        &__payBtnSection {
+          gap: 2rem;
+          margin-top: 2rem;
+          width: 100%;
+          @include flex();
+          align-items: center;
+
+          &__payBtn {
+            width: 80%;
+            color: $main;
+            padding: 0.8rem;
+            font-size: 1rem;
+            background: $text;
+            transition: 0.2s ease all;
+
+            &:active {
+              opacity: 0.7;
+            }
+          }
+
+          &__footerSection {
+            gap: 0.5rem;
+            width: 100%;
+            @include flex();
+            align-items: center;
+          }
+
+          &__error {
+            width: 80%;
+            padding: 1rem;
+            font-size: 1.3rem;
+
+            color: #fff;
+            background: #f07246;
+          }
+        }
+      }
+    }
+  }
+}
+
+.removeBtn {
+  display: none;
+}
+
+.right {
+  right: 0%;
+}
+
+.left {
+  left: 0%;
+}
+
+.banks {
+  gap: 1rem;
+  @include flex();
+  flex-wrap: nowrap;
+}

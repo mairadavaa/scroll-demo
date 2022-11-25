@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $Roboto;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  color: $dark;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+#root {
+  height: 100%;
+}

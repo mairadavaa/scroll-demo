@@ -1,0 +1,150 @@
+@import "variables.scss";
+
+@mixin columnElement {
+  display: flex;
+  flex-direction: column;
+}
+@mixin perfectCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin inputElement {
+  height: 60px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  padding-right: 50px;
+  border-radius: 10px;
+  background-color: $formInputBackground;
+}
+@mixin font700 {
+  font-size: 16px;
+  font-weight: 700;
+}
+@mixin btnTrans {
+  color: $formPrimaryTextColor;
+  background-color: transparent;
+}
+.form {
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  &_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include perfectCenter;
+    &_back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: $formContainerBackground;
+    }
+    &_main {
+      z-index: 30;
+      width: 500px;
+      padding: 40px 75px;
+      position: relative;
+      border-radius: 20px;
+      align-items: center;
+      @include columnElement;
+      background-color: $formGrayBackground;
+      .closeIcon {
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        position: absolute;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      > div {
+        display: flex;
+        column-gap: 10px;
+        margin-bottom: 37px;
+        span {
+          font-weight: 700;
+          color: $formPrimaryTextColor;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          @include font700;
+          background-color: transparent;
+          color: $formSecondaryTextColor;
+        }
+      }
+      form {
+        width: 350px;
+        row-gap: 30px;
+        margin-bottom: 30px;
+        @include columnElement;
+        div {
+          @include columnElement;
+          label {
+            margin-bottom: 10px;
+          }
+        }
+        .mailNumberBox input {
+          @include inputElement;
+        }
+        .passwordBox div {
+          @include inputElement;
+          input {
+            height: 100%;
+            border: none;
+            outline: none;
+          }
+        }
+        .passwordBox div {
+          position: relative;
+          span {
+            top: 50%;
+            right: 10px;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            @include btnTrans;
+            position: absolute;
+            @include perfectCenter;
+            transform: translateY(-50%);
+          }
+        }
+        .mailNumberBox input,
+        .passwordBox input {
+          font-size: 17px;
+          color: $formPrimaryTextColor;
+        }
+        .submitBtn {
+          height: 60px;
+          @include font700;
+          color: #ffffff;
+          border-radius: 10px;
+          text-transform: uppercase;
+          background-color: $formBtnBackground;
+        }
+      }
+      button {
+        border: none;
+        cursor: pointer;
+        @include btnTrans;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.error {
+  text-align: right;
+  margin-top: 10px;
+  color: #c50c0c;
+}
+.success{
+  text-align: center;
+  color: green;
+}
